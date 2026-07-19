@@ -1,0 +1,78 @@
+🤔 First Question
+Is TypeScript a new programming language?
+
+❌ Nope.
+
+It's JavaScript with a type system.
+
+Imagine JavaScript is this:
+
+👦 JavaScript
+
+TypeScript is:
+
+🦸 JavaScript + Superpowers
+
+TypeScript does not run directly in browsers or Node.
+
+It first becomes JavaScript.
+
+TypeScript (.ts)
+
+        ↓
+
+Compiler (tsc)
+
+        ↓
+
+JavaScript (.js)
+
+        ↓
+
+Browser / Node
+
+So when you write:
+
+let name: string = "Shreyesh";
+
+The compiler removes the types.
+
+Generated JS:
+
+let name = "Shreyesh";
+
+Types exist only while you're coding. They help catch mistakes before your code runs.
+
+//////////////////////////////////
+
+🤔 What is tsconfig.json?
+
+Think of it as the settings file for TypeScript.
+
+It tells the compiler:
+
+Which JavaScript version to generate
+Which files to compile
+Strictness rules
+Module system
+Many other project-wide options
+
+You won't need most of its settings right now.
+
+
+//////////////////////////////////////
+
+
+⭐ Biggest Difference from JavaScript
+
+In JavaScript:
+
+let age = 20;
+
+In TypeScript:
+
+let age: number = 20;
+
+The : number is called a type annotation.
+
+It tells TypeScript what kind of value the variable should hold.
