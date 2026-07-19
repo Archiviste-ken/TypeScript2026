@@ -1,0 +1,23 @@
+📂 Create Your First Project
+
+mkdir ts-course
+
+cd ts-course
+
+Initialize npm:
+
+npm init -y
+
+Install TypeScript locally (recommended for projects):
+
+npm install --save-dev typescript
+
+Create the configuration file:
+
+npx tsc --init
+
+You'll now see:
+
+package.json
+
+tsconfig.json

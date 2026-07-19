@@ -1,0 +1,31 @@
+📚 Primitive Types
+
+These are the types you'll use every day.
+
+String
+
+let name: string = "Shreyesh";
+
+Number
+
+let age: number = 20;
+
+Works for:
+
+Integers
+
+Decimals
+
+Unlike some languages, TypeScript has just one number type.
+
+Boolean
+
+let isStudent: boolean = true;
+
+Null
+
+let data: null = null;
+
+Undefined
+
+let value: undefined = undefined;
