@@ -1,0 +1,17 @@
+🧠 Before We Start
+
+In Module 1, you learned:
+
+let age = 20;
+let name = "Shreyesh";
+
+Now we're going to learn the types that make TypeScript powerful.
+
+Today we'll cover:
+
+✅ any
+✅ unknown
+✅ void
+✅ never
+
+These four types confuse almost every beginner, but they're actually simple.

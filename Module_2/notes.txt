@@ -1,0 +1,268 @@
+🔥 1. any — "I Don't Care" <<<< LIKE WRITING JS AGAIN >>>>
+
+Think of any as telling TypeScript:
+
+"Stop checking this variable. I'll handle it."
+
+Example:
+
+let data: any = 10;
+
+data = "Hello";
+
+data = true;
+
+data = [1, 2, 3];
+
+Everything works.
+
+Why?
+
+Because TypeScript has completely stopped checking the type.
+
+😱 Why is any Dangerous?
+
+Imagine this:
+
+let age: any = 20;
+
+console.log(age.toUpperCase());
+
+TypeScript says:
+
+✅ No error.
+
+But when you run it:
+
+TypeError:
+age.toUpperCase is not a function
+
+Oops.
+
+You've lost TypeScript's protection.
+
+💼 Real-World Rule
+
+Avoid (any) unless you truly don't know the type (for example, while migrating old JavaScript code).
+
+If you write any everywhere, you're basically writing JavaScript again.
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+🛡️ 2. unknown — "I Don't Know Yet"  
+
+<<<<< unknown is most useful when data comes from outside your program, and you can't trust its type.
+
+Think of it as saying:
+
+"I have some data, but I refuse to assume what it is until I verify it.">>>>>>>>>>>
+
+unknown is the safer version of any.
+
+Example:
+
+let data: unknown = "Hello";
+
+Looks similar.
+
+Now try:
+
+console.log(data.toUpperCase());
+
+TypeScript says:
+
+❌ Error.
+
+Why?
+
+Because it doesn't know whether data is actually a string.
+
+✅ How Do We Use unknown?
+
+We check the type first.
+
+let data: unknown = "Hello";
+
+if (typeof data === "string") {
+    console.log(data.toUpperCase());
+}
+
+Now it works.
+
+Why?
+
+Because after the typeof check, TypeScript knows data is a string inside that block.
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+🤔 any vs unknown
+any
+let value: any = "Hello";
+
+value.toUpperCase();
+
+✅ Allowed.
+
+unknown
+let value: unknown = "Hello";
+
+value.toUpperCase();
+
+❌ Error.
+
+You must check first:
+
+if (typeof value === "string") {
+    value.toUpperCase();
+}
+🎯 Rule to Remember
+Need flexibility?
+
+Use unknown.
+
+Not any.
+
+unknown keeps TypeScript helping you.
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+🚫 3. void
+
+This one is easy.
+
+It mainly appears in functions.
+
+Example:
+
+function greet(): void {
+    console.log("Hello");
+}
+
+Question:
+
+What does this function return?
+
+Nothing.
+
+That's exactly what void means.
+
+Another example:
+
+function printName(name: string): void {
+    console.log(name);
+}
+
+It prints something.
+
+Returns nothing.
+
+❌ Wrong Example
+function greet(): void {
+    return "Hello";
+}
+
+TypeScript:
+
+Error
+
+A void function shouldn't return a value.
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+💥 4. never
+
+This one sounds scary, but it's rare.
+
+never means:
+
+This function never finishes normally.
+
+Example 1: Throws an Error
+
+function crash(): never {
+    throw new Error("Something went wrong");
+}
+
+The function never reaches the end because it throws an error.
+
+Example 2: Infinite Loop
+
+function loopForever(): never {
+    while (true) {
+        console.log("Running...");
+    }
+}
+
+This function never returns because it never ends.
+
+🧠 Difference Between void and never
+
+void
+
+function greet(): void {
+    console.log("Hi");
+}
+
+Runs.
+
+Ends.
+
+Returns nothing.
+
+never
+
+function crash(): never {
+    throw new Error("Boom");
+}
+
+Never reaches the end.
+
+Never returns.
+
+🎯 Quick Comparison
+
+Type	Meaning	Common Use
+any	     Skip type checking	Avoid when possible
+unknown	Type not known yet	API data, user input
+void	Returns nothing	Functions
+never	Never returns	Errors, infinite loops
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+
+
+🔥 Common Beginner Mistakes
+
+❌ Using any to silence every error.
+
+let user: any = getUser();
+
+It works, but you lose TypeScript's safety.
+
+❌ Forgetting to check unknown.
+
+let value: unknown = "Hi";
+
+console.log(value.toUpperCase());
+
+Always narrow the type first.
+
+❌ Thinking void means undefined.
+
+void describes a function that doesn't return a meaningful value. It's not the same as the value undefined, even though JavaScript functions without a return statement evaluate to undefined at runtime.
+
+📝 Summary
+
+Today you learned:
+
+✅ any (use sparingly)
+✅ unknown (prefer this over any when the type isn't known)
+✅ void (functions that don't return a value)
+✅ never (functions that never complete normally)
