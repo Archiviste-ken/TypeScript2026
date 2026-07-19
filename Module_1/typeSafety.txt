@@ -1,0 +1,33 @@
+❌ Type Safety
+
+let age = 20;
+
+age = "hello";
+
+TypeScript says:
+
+❌ Error
+
+Type 'string' is not assignable to type 'number'
+
+This catches bugs before you run your code.
+
+//////////////////////////////////////////////////////////////////////////
+
+😈 JavaScript vs TypeScript
+
+JavaScript
+
+let score = 100;
+
+score = "abc";
+
+✅ Runs (even though it's probably a bug).
+
+TypeScript
+
+let score = 100;
+
+score = "abc";
+
+❌ Compile-time error.
