@@ -5,7 +5,7 @@ age = "Shreyesh"
 // console.log(age) => type error
 
 let name:unknown = "TypeScript";
-
+     
 if(typeof name === "string" ){ 
 //  //(//🔥 Tiny Improvement
 
